@@ -1,0 +1,47 @@
+---
+title: "atharva_salitri_program4_23_01_25"
+output: html_document
+date: "2025-01-23"
+runtime: shiny
+---
+```{r}
+
+data("iris")
+iris = iris
+iris
+```
+```{r}
+str(iris)
+```
+
+```{r}
+summary(iris)
+```
+You can write in white space
+
+Box Plot
+
+```{r}
+boxplot(iris$Sepal.Length~iris$Species, main="boxplot for sepal length", xlab = "iris", ylab = "sepal length", col = c("green", "blue", "red"))
+```
+
+Scatter Plot
+```{r}
+
+plot(iris$Sepal.Length, iris$Sepal.Width, xlab = "Sepal Lenght", ylabel = "Sepal Width", main = "Scatter Plot", col = c("green", "blue", "red"))
+```
+
+Histogram
+```{r}
+hist(iris$Sepal.Length, main = "Histogram", xlabel = "Sepal Length", border = "red")
+```
+
+
+```{r}
+attach(iris)
+```
+
+```{r}
+boxplot(Sepal.Length~Species, main="boxplot for sepal length", xlab = "iris", ylab = "sepal length", col = c("green", "blue", "red"))
+```
+
