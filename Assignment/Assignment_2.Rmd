@@ -1,0 +1,275 @@
+---
+title: "Assignment_2, Div: CSAI-B, Roll No.: 37"
+author: "Atharva Salitri"
+date: "25-01-2025"
+output: html_document
+runtime: shiny
+---
+#Exercise 1
+```{r}
+
+s <- 2
+p <- 2L
+
+class_s <- class(s)
+class_p <- class(p)
+cat("Class of s:", class_s, "\n")  
+cat("Class of p:", class_p, "\n") 
+
+
+q <- as.integer(s)
+
+
+class_q <- class(q)
+cat("Class of q:", class_q, "\n")  
+```
+
+```{r}
+
+b <- 4/3
+
+
+as_integer_b <- as.integer(b)
+cat("as.integer(b):", as_integer_b, "\n")  
+
+# ii. class(b)
+class_b <- class(b)
+cat("class(b):", class_b, "\n")  
+
+# iii. as.numeric(b)
+as_numeric_b <- as.numeric(b)
+cat("as.numeric(b):", as_numeric_b, "\n") 
+
+# iv. Use is.integer and is.numeric for b
+is_integer_b <- is.integer(b)
+is_numeric_b <- is.numeric(b)
+cat("is.integer(b):", is_integer_b, "\n")  
+cat("is.numeric(b):", is_numeric_b, "\n") 
+```
+```{r}
+# Step 3
+x <- 1
+y <- 2
+
+z <- x > y
+
+# Print z and its class
+cat("Value of z:", z, "\n")  
+cat("Class of z:", class(z), "\n")
+```
+
+```{r}
+# Step 4
+x <- "My SGPA "
+y <- "for last semester is "
+z <- 9.12
+print(paste(x, y, z))
+```
+
+#Exercise 2
+
+```{r}
+vec_seq <- seq(1, 37, by = 3)
+cat("Vector using seq():", vec_seq, "\n")
+```
+
+```{r}
+vec_rep <- rep(5, times = 10)
+cat("Vector using rep():", vec_rep, "\n")
+```
+
+```{r}
+x <- c(1, 5, 2)
+y <- c(3, 7, 9)
+
+# i. Augment x by adding y to the left
+x <- c(y, x)
+cat("Augmented x:", x, "\n")
+
+# ii. Augment y by adding elements 4, 3, 2 at the end
+y <- c(y, 4, 3, 2)
+cat("Augmented y:", y, "\n")
+
+# iii. Find maximum value of y and minimum value of x
+max_y <- max(y)
+min_x <- min(x)
+cat("Maximum value of y:", max_y, "\n")
+cat("Minimum value of x:", min_x, "\n")
+```
+
+```{r}
+x <- c(1, 5, 2, 3, 7, 6, 8)
+
+y <- x^2
+z <- 1/x
+w <- log10(x)
+
+cat("Vector y (x^2):", y, "\n")
+cat("Vector z (1/x):", z, "\n")
+cat("Vector w (log10(x)):", w, "\n")
+```
+
+```{r}
+age <- c(22, 27, 31, 41, 30, 25, 19, 20, 23, 35)
+
+# i. Access age of the fourth person
+fourth_age <- age[4]
+cat("Age of the fourth person:", fourth_age, "\n")
+
+# ii. Create a vector age30 with age of persons > 30
+age30 <- age[age > 30]
+cat("Ages greater than 30:", age30, "\n")
+
+# iii. Access age of the last 3 persons
+last3_ages <- tail(age, 3)
+cat("Ages of the last 3 persons:", last3_ages, "\n")
+
+# iv. Find number of elements in the vector age
+num_elements <- length(age)
+cat("Number of elements in age:", num_elements, "\n")
+
+# v. Access ages of persons except the 5th and 7th
+ages_except <- age[-c(5, 7)]
+cat("Ages except 5th and 7th persons:", ages_except, "\n")
+
+# vi. Create a vector age2 with ages between 20 and 25
+age2 <- age[age >= 20 & age <= 25]
+cat("Ages between 20 and 25:", age2, "\n")
+```
+
+# Exercise 3
+
+```{r}
+ls <- list(
+  Rollno = 1:4,
+  FirstName = c("Ravi", "Om", "Ajay", "Shiv"),
+  LastName = c("Dev", "Gandhi", "Pande", "Rao"),
+  Subject = c("AE", "DS", "ML", "OS"),
+  Marks = c(35, 40, 38, 2),
+  Result = c("P", "P", "P", "F")
+)
+```
+
+```{r}
+print(ls)
+
+print(ls$Rollno)
+print(ls$FirstName)
+print(ls$LastName)
+print(ls$Subject)
+print(ls$Marks)
+print(ls$Result)
+```
+
+
+```{r}
+sapply(ls, class)
+
+# a) Print(ls[[2]][1]) - First name of the first student
+print(ls[[2]][1])  
+
+# b) print(ls[[4]][4]) - Subject of the fourth student
+print(ls[[4]][4])  
+
+# c) print(ls[5]) - List containing Marks
+print(ls[5]) 
+```
+
+```{r}
+ls$Marks[3] <- 45
+print(ls$Marks)
+
+ls$Subject[4] <- "OE"
+print(ls$Subject)
+```
+
+```{r}
+ls$NativePlace <- c("Pune", "Nagpur", "Mumbai", "Nashik")
+print(ls$NativePlace)
+
+ls$Rollno <- c(ls$Rollno, 5)
+ls$FirstName <- c(ls$FirstName, "Julie")
+ls$LastName <- c(ls$LastName, "Gommes")
+ls$Subject <- c(ls$Subject, "DS")
+ls$Marks <- c(ls$Marks, 30)
+ls$Result <- c(ls$Result, "P")
+ls$NativePlace <- c(ls$NativePlace, "Hyderabad")
+
+print(ls)
+```
+
+# Exercise 4
+
+```{r}
+x <- list(
+  n = c(2, 3, 5),
+  s = c("aa", "bb", "cc", "dd"),
+  b = c(TRUE, FALSE, TRUE, FALSE),
+  value = 3
+)
+```
+
+```{r}
+
+print(x[["s"]])
+
+print(x[c(2, 4)])
+
+print(x$s)
+```
+
+```{r}
+x$s[x$s == "aa"] <- "tt"
+
+print(x$s)
+```
+
+# Exercise 5
+
+```{r}
+A <- matrix(c(5, 0, 3, 1, 
+              2, 6, 8, 8, 
+              6, 2, 1, 5, 
+              1, 0, 4, 6), 
+            nrow = 4, byrow = TRUE)
+
+B <- matrix(c(7, 1, 9, 5, 
+              5, 8, 4, 3, 
+              8, 2, 3, 7, 
+              0, 6, 8, 9), 
+            nrow = 4, byrow = TRUE)
+
+cat("Matrix A:\n"); print(A)
+cat("Matrix B:\n"); print(B)
+
+```
+
+```{r}
+largest_A <- max(A)
+smallest_B <- min(B)
+cat("Largest number in A:", largest_A, "\n")
+cat("Smallest number in B:", smallest_B, "\n")
+```
+
+```{r}
+c <- A[2, 3]
+cat("2nd row, 3rd column element of A:", c, "\n")
+
+D <- B[4, ]
+cat("Row 4 of B:", D, "\n")
+
+largest_last_col_B <- max(B[, ncol(B)])
+cat("Largest number in the last column of B:", largest_last_col_B, "\n")
+
+# Transpose of A
+transpose_A <- t(A)
+cat("Transpose of A:\n"); print(transpose_A)
+
+if (det(B) != 0) {
+  inverse_B <- solve(B)
+  cat("Inverse of B:\n"); print(inverse_B)
+} else {
+  cat("Matrix B is not invertible.\n")
+}
+```
+
